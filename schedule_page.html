@@ -15,7 +15,11 @@
         <div class="container">
             <h1 class="logo">FitStudio</h1>
             
-            <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Toggle navigation" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="index.html">Home Page</a></li>
                     <li><a href="trainers_page.html">Trainers Page</a></li>
@@ -87,5 +91,17 @@
             <p>&copy; 2025 FitStudio. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('nav-open');
+        });
+        // Optional: Close menu when a link is clicked
+        document.querySelectorAll('.main-nav ul li a').forEach(item => {
+            item.addEventListener('click', () => {
+                 document.getElementById('mainNav').classList.remove('nav-open');
+            })
+        });
+    </script>
 </body>
 </html>
