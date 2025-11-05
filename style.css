@@ -74,6 +74,18 @@ h2, h3, h4 {
     color: var(--secondary-color);
 }
 
+/* New: Mobile Toggle Button Styling */
+.menu-toggle {
+    display: none; /* Hide by default on desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
 .main-nav ul {
     list-style: none;
     display: flex;
@@ -385,18 +397,55 @@ footer {
 @media (max-width: 768px) {
     /* Header/Nav Mobile */
     .main-header .container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Keep logo and toggle on the same line */
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .menu-toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+
+    .main-nav {
+        /* Mobile: Full-width dropdown navigation */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background: var(--background-dark); /* Dark background for dropdown */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 1rem 0;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-200%); /* Start off-screen (hidden) */
+        z-index: 1000;
+        border-bottom: 3px solid var(--primary-color);
+    }
+    
+    .main-nav.nav-open {
+        transform: translateY(0); /* Slide in when active */
     }
 
     .main-nav ul {
-        margin-top: 1rem;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        margin-top: 0; 
     }
 
+    .main-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
     .main-nav ul li a {
-        padding: 0.5rem 0.75rem;
+        display: block;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--background-light); /* Separator */
         font-size: 0.9rem;
+    }
+    
+    .main-nav ul li:last-child a {
+        border-bottom: none;
     }
 
     /* Hero Mobile */
@@ -418,7 +467,7 @@ footer {
         max-width: 350px;
     }
 
-    /* Schedule Table Mobile */
+    /* Schedule Table Mobile (Existing responsive styles) */
     .schedule-table thead {
         display: none;
     }
