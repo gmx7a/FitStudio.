@@ -1,0 +1,462 @@
+/* ------------------------------------------------------------------- */
+/* --- Consolidated Global Styles & Setup --- */
+/* ------------------------------------------------------------------- */
+:root {
+    --primary-color: #ff6b6b; /* Energetic Red/Orange Accent */
+    --secondary-color: #f7f1e3; /* Light/Off-White Text */
+    --background-dark: #1e272e; /* Deep Dark Background */
+    --background-light: #2c3a50; /* Slightly lighter dark for contrast */
+    --font-family: 'Montserrat', sans-serif;
+    --card-width: 280px; 
+    --image-height: 280px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: var(--background-dark);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+h2, h3, h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.my-5 {
+    padding-top: 3rem; 
+    padding-bottom: 3rem;
+}
+
+/* ------------------------------------------------------------------- */
+/* --- Header & Navigation (Universal) --- */
+/* ------------------------------------------------------------------- */
+.main-header {
+    background: var(--background-light);
+    color: var(--secondary-color);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--secondary-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.main-nav ul li a {
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.main-nav ul li a:hover {
+    color: var(--background-dark);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+/* ------------------------------------------------------------------- */
+/* --- Footer (Universal) --- */
+/* ------------------------------------------------------------------- */
+footer {
+    background: var(--background-dark);
+    color: #95a5a6;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--background-light);
+}
+
+/* ------------------------------------------------------------------- */
+/* --- Home Page Specific Styles (Hero & Programs) --- */
+/* ------------------------------------------------------------------- */
+.hero-section {
+    background: linear-gradient(rgba(30, 39, 46, 0.7), rgba(30, 39, 46, 0.7)), url('https://via.placeholder.com/1920x800/2c3a50/ffffff?text=FITNESS+STUDIO+HERO+IMAGE') no-repeat center center/cover;
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--background-dark);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff4757;
+    transform: scale(1.05);
+}
+
+.programs-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--background-light);
+}
+
+.programs-section h3 {
+    font-size: 2.5rem;
+}
+
+.section-description {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: #b8c1d0;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.program-card {
+    background: var(--background-dark);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.program-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.program-card h4 {
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+.program-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+}
+
+.program-link:hover {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+
+/* ------------------------------------------------------------------- */
+/* --- Trainer Card Styles --- */
+/* ------------------------------------------------------------------- */
+.card-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.trainer-card {
+    background-color: var(--background-light);
+    width: var(--card-width); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+}
+
+.trainer-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.trainer-card .card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.trainer-card .card-text {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.trainer-card img {
+    width: 100%;
+    height: var(--image-height); 
+    object-fit: cover; 
+}
+
+.btn-trainer-register {
+    display: block; 
+    width: 100%; 
+    padding: 0.75rem 1.5rem;
+    
+    background-color: var(--primary-color);
+    color: var(--background-dark) !important; 
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-trainer-register:hover {
+    background-color: var(--background-dark);
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+    transform: scale(1.03);
+}
+
+/* ------------------------------------------------------------------- */
+/* --- Schedule Table Styles --- */
+/* ------------------------------------------------------------------- */
+.schedule-table-wrapper {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-light);
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    min-width: 700px;
+}
+
+.schedule-table th, 
+.schedule-table td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid var(--background-dark);
+}
+
+.schedule-table thead th {
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #34495e; 
+}
+
+.class-hiit { background-color: #e74c3c20; color: #e74c3c; font-weight: 700; }
+.class-yoga { background-color: #2ecc7120; color: #2ecc71; }
+.class-pilates { background-color: #9b59b620; color: #9b59b6; }
+.class-zumba { background-color: #f1c40f20; color: #f1c40f; font-weight: 700; }
+.class-spin { background-color: #3498db20; color: #3498db; }
+.class-strength { background-color: #e67e2220; color: #e67e22; font-weight: 700; }
+.class-rest { background-color: #7f8c8d10; color: #7f8c8d; font-style: italic; }
+
+.schedule-note {
+    background-color: var(--background-light); 
+    color: var(--secondary-color);
+    padding: 10px 15px;
+    margin-top: -15px; 
+    margin-bottom: 2rem; 
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ------------------------------------------------------------------- */
+/* --- Registration Form Overrides (Bootstrap) --- */
+/* ------------------------------------------------------------------- */
+.form-control, .form-select {
+    background-color: var(--background-dark) !important;
+    border-color: var(--background-light) !important;
+    color: var(--secondary-color) !important;
+}
+
+.form-label {
+    color: var(--secondary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--background-dark) !important;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff4757 !important;
+    border-color: #ff4757 !important;
+}
+
+.modal-content {
+    background-color: var(--background-light);
+    color: var(--secondary-color);
+}
+
+.form-control::placeholder {
+    color: rgba(247, 241, 227, 0.5); 
+}
+.form-select option {
+    color: var(--background-dark); 
+}
+
+/* ------------------------------------------------------------------- */
+/* --- Media Queries (Responsiveness) --- */
+/* ------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Header/Nav Mobile */
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .main-nav ul li a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero Mobile */
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .programs-section {
+        padding: 3rem 0;
+    }
+
+    /* Trainers Mobile */
+    .trainer-card {
+        width: 90%; 
+        max-width: 350px;
+    }
+
+    /* Schedule Table Mobile */
+    .schedule-table thead {
+        display: none;
+    }
+    
+    .schedule-table, .schedule-table tbody, .schedule-table tr {
+        display: block;
+    }
+
+    .schedule-table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--background-light);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .schedule-table td {
+        border: none;
+        border-bottom: 1px solid #34495e;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+        font-size: 0.9rem;
+    }
+
+    .schedule-table td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        color: var(--primary-color);
+        content: attr(data-label);
+    }
+    
+    .schedule-table td:last-child {
+        border-bottom: 0;
+    }
+}
